@@ -43,7 +43,7 @@ function getWeather(link, pos) {
     $('#degreesFahrenheit').text(Math.round(tempFahrenheit) + "°F");
 
     var url = 'https://api.geoapify.com/v1/geocode/reverse';
-    url += '?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&apiKey=b34d75bd535141198b423e24a6e21234';
+    url += '?lat=' + pos.coords.latitude + '&lon=' + pos.coords.longitude + '&apiKey=b34d75bd535141198b423e24a6e21234';
     getWeather(url)
   });
 }
