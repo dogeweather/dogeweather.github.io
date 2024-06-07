@@ -24,10 +24,10 @@ function getWeather(link, pos) {
     $('#weather-id').text(id);
     $('#weather-icon').text(icon);
 
-    var doge_img = "url(./img/doge/" + icon + ".png)";
+    var doge_img = "url(../img/doge/" + icon + ".png)";
     $('.doge-image').css('background-image', doge_img);
 
-    var sky_img = "url(./img/sky-img/" + icon + ".png)";
+    var sky_img = "url(../img/sky-img/" + icon + ".png)";
     $('.bg').css('background-image', sky_img);
 
 
@@ -67,7 +67,7 @@ function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, function(error) {
         $('#browser_geo').text('use my location');	
-          getWeather("./weather.php");
+          getWeather("../weather.php");
       });
   }
   else {
@@ -79,7 +79,7 @@ function showPosition(position) {
   var url = 'https://api.openweathermap.org/data/2.5/weather';
     url += '?lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&APPID=56a0dcfb48891e08fd6efb6a94ad1d1b&callback=?';
 
-    getWeather(url, pos);
+    getWeather(url, position);
     $("#browser_geo").text("wow, located!").css("cursor", "auto").css("color", "#FF5CFF");
 }
 
